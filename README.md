@@ -16,3 +16,8 @@ kubectl create -f ./portworx_sandbox/central_portworx_result.yaml
 3 - wait untill the portworx node is ready
 kubectl -n kube-system get storagenodes -l name=portworx --watch
 kubectl -n kube-system describe storagenode node01
+
+4 - test portworx with a pod
+kubectl create -f ./portworx_sandbox/portworx-sc.yaml
+kubectl create -f ./portworx_sandbox/portworx-volume-pvcsc.yaml
+kubectl create -f ./portworx_sandbox/portworx-volume-pvcscpod.yaml
